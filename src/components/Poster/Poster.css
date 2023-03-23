@@ -1,7 +1,6 @@
-/* .poster {
-    width: 200px;
-    height: auto;
-} */
+.poster {
+   margin: 20px;
+}
 
 .poster-img {
     width: 200px;

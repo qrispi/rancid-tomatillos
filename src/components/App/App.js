@@ -17,6 +17,9 @@ export default class App extends Component {
   render() {
     return (
       <main className="App">
+        <header>
+          <h1 className='title'>Rancid Tomatillos</h1>
+        </header>
         <View movies={this.state.movies}/>
       </main>
     )
