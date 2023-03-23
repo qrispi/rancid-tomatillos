@@ -1,13 +1,18 @@
 import './App.css';
 import React, {Component} from 'react';
 import View from '../View/View';
+import movieData from '../../data/movie-data';
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: ["test", "test2"]
+      movies: []
     }
+  }
+  componentDidMount = () => {
+    this.allMovies = movieData.movies;
+    this.setState({movies: this.allMovies});
   }
   render() {
     return (
