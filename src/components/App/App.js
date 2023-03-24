@@ -1,6 +1,7 @@
 import './App.css';
 import React, {Component} from 'react';
 import Poster from '../Poster/Poster';
+import Movie from '../Movie/Movie';
 import movieData from '../../data/movie-data';
 
 export default class App extends Component {
