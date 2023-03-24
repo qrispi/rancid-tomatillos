@@ -7,12 +7,12 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: []
+      movies: [],
+      selectedMovie: null
     }
   }
   componentDidMount = () => {
-    this.allMovies = movieData.movies;
-    this.setState({movies: this.allMovies});
+    this.setState({movies: movieData.movies});
   }
   render() {
     return (
