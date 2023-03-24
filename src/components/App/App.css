@@ -11,3 +11,10 @@ header {
 .title {
   font-size: 5rem;
 }
+
+.poster-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
