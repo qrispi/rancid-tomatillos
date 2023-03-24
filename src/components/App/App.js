@@ -1,18 +1,18 @@
 import './App.css';
 import React, {Component} from 'react';
-import View from '../View/View';
+import Poster from '../Poster/Poster';
 import movieData from '../../data/movie-data';
 
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: []
+      movies: [],
+      selectedMovie: null
     }
   }
   componentDidMount = () => {
-    this.allMovies = movieData.movies;
-    this.setState({movies: this.allMovies});
+    this.setState({movies: movieData.movies});
   }
   render() {
     return (
@@ -20,7 +20,7 @@ export default class App extends Component {
         <header>
           <h1 className='title'>Rancid Tomatillos</h1>
         </header>
-        <View movies={this.state.movies}/>
+        {!this.state.selectedMovie ? <div className='poster-container'>{this.state.movies.map(movie => <Poster key={movie.id} data={movie} />)}</div> : <h1>One Movie</h1>}
       </main>
     )
   }
