@@ -1,0 +1,15 @@
+.Hero {
+    height: 40vh;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.opaque-background {
+    background-color: rgba(128, 22, 22, 0.8);
+    color: white;
+    border: solid 1px  rgba(128, 22, 22, 0.8);
+    border-radius: 3px;
+    margin-left: 50px;
+    padding: 8px;
+}
