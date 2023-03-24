@@ -1,10 +1,10 @@
 import React from "react";
-import "./Badge.css"
+import "./Tagline.css"
 
-const Badge = (props) => {
+const Tagline = (props) => {
     return (
-        <p className='Badge'>{props.tagline}</p>
+        <p className='Tagline'>{props.tagline}</p>
     )
 }
 
-export default Badge;
+export default Tagline;
