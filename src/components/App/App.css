@@ -49,3 +49,9 @@ header {
   align-items: center;
   justify-content: center;
 }
+
+.error-message {
+  margin: 5vh 3vw;
+  text-align: center;
+  font-size: 5rem;
+}

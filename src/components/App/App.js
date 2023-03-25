@@ -54,7 +54,14 @@ export default class App extends Component {
             <h2 className='tagline'><i>find your next worst movie...</i></h2>
           </div>
         </header>
-        {!this.state.selectedMovie ? <div className='poster-container'>{this.state.movies.map(movie => <Poster key={movie.id} data={movie} fetchSingleMovie={this.fetchSingleMovie}/>)}</div> : <Movie data={this.state.selectedMovie} clearSelectedMovie={this.clearSelectedMovie} />}
+        {!this.state.selectedMovie ? <div className='poster-container'>
+          {this.state.movies.map(movie => 
+          <Poster key={movie.id} data={movie} fetchSingleMovie={this.fetchSingleMovie}/>)}
+          </div> : 
+          <Movie data={this.state.selectedMovie} clearSelectedMovie={this.clearSelectedMovie} />}
+          <footer>
+            {this.state.allMoviesError && <h3 className='error-message'>Sorry we are experiencing server issues right now! Please try again later!</h3>}
+          </footer>
       </main>
     )
   }
