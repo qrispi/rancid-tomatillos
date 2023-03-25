@@ -3,7 +3,6 @@ import React, {Component} from 'react';
 import Poster from '../Poster/Poster';
 import Movie from '../Movie/Movie';
 import movieData from '../../data/movie-data';
-// import '../../images/tomatillo.png';
 
 export default class App extends Component {
   constructor() {
@@ -28,7 +27,7 @@ export default class App extends Component {
         <header>
           <div className='logo-wrapper'>
             <div className='title-wrapper'>
-              <img src={require('../../images/tomatillo.png')} alt='Picture of Tomatillo' className='tomatillo'/>
+              <img src={require('../../images/tomatillo-wrapped.png')} alt='Picture of Tomatillo' className='tomatillo'/>
               <h1 className='title'>Rancid Tomatillos</h1>
             </div>
             <h2 className='tagline'><i>find your next worst movie...</i></h2>
