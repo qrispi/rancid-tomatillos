@@ -13,15 +13,27 @@ export default class App extends Component {
     }
   }
   componentDidMount = () => {
-    this.setState({movies: movieData.movies});
+    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
+      .then(response => {
+        if(!response.ok) {
+          this.setState({error: response.status});
+        } else {
+          return response.json();
+        }
+      }
+    ).then(data => {
+      this.setState({movies: data.movies});
+    });
   }
   fetchSingleMovie = (movieId) => {
-    this.setState({selectedMovie: movieData.movie});
+    console.log(movieId)
+    // this.setState({selectedMovie: movieData.movie});
   }
   clearSelectedMovie = () => {
     this.setState({selectedMovie: null});
   }
   render() {
+    // console.log(this.state);
     return (
       <main className="App">
         <header>
