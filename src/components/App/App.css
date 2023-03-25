@@ -1,15 +1,35 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
 header {
   width: 100%;
   height: 100px;
   margin: 20px 0px;
+  margin-left: 150px;
+  margin-bottom: 200px;
 }
 
 .title {
-  font-size: 5rem;
+  font-size: 6rem;
+  font-weight: 80;
+  margin: 0;
+  padding: 0;
+}
+
+.tomatillo {
+  height: 100px;
+  width: auto;
+  margin: 20px;
+  padding: 0;
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 80%;
+  border-bottom: 2px solid black;
 }
 
 .poster-container {
