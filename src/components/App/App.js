@@ -16,7 +16,7 @@ export default class App extends Component {
     fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
       .then(response => {
         if(!response.ok) {
-          this.setState({error: response.status});
+          this.setState({allMoviesError: response.status});
         } else {
           return response.json();
         }
@@ -26,14 +26,23 @@ export default class App extends Component {
     });
   }
   fetchSingleMovie = (movieId) => {
-    console.log(movieId)
-    // this.setState({selectedMovie: movieData.movie});
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
+      .then(response => {
+        if(!response.ok) {
+          this.setState({singleMovieError: response.status});
+        } else {
+          return response.json();
+        }
+      }
+    ).then(data => {
+      this.setState({selectedMovie: data.movie});
+    });
   }
   clearSelectedMovie = () => {
     this.setState({selectedMovie: null});
   }
   render() {
-    // console.log(this.state);
+    console.log(this.state);
     return (
       <main className="App">
         <header>
