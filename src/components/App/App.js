@@ -29,7 +29,8 @@ export default class App extends Component {
     fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
       .then(response => {
         if(!response.ok) {
-          this.setState({singleMovieError: response.status});
+          this.setState({singleMovieError: [response.status, movieId]});
+          setTimeout(() => this.setState({singleMovieError: []}), 4000);
         } else {
           return response.json();
         }
@@ -42,7 +43,6 @@ export default class App extends Component {
     this.setState({selectedMovie: null});
   }
   render() {
-    console.log(this.state);
     return (
       <main className="App">
         <header>
@@ -56,7 +56,7 @@ export default class App extends Component {
         </header>
         {!this.state.selectedMovie ? <div className='poster-container'>
           {this.state.movies.map(movie => 
-          <Poster key={movie.id} data={movie} fetchSingleMovie={this.fetchSingleMovie}/>)}
+          <Poster key={movie.id} data={movie} error={this.state.singleMovieError} fetchSingleMovie={this.fetchSingleMovie}/>)}
           </div> : 
           <Movie data={this.state.selectedMovie} clearSelectedMovie={this.clearSelectedMovie} />}
           <footer>
