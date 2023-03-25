@@ -37,6 +37,17 @@ export default class App extends Component {
     ).then(data => {
       this.setState({selectedMovie: data.movie});
     });
+    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}/videos`)
+      .then(response => {
+        if(!response.ok) {
+          this.setState({videosError: response.status})
+        } else {
+          return response.json();
+        }
+      }
+    ).then(data => {
+      this.setState({selectedMovieVideos: data.videos});
+    });
   }
   clearSelectedMovie = () => {
     this.setState({selectedMovie: null});
@@ -57,7 +68,7 @@ export default class App extends Component {
           {this.state.movies.map(movie => 
           <Poster key={movie.id} data={movie} error={this.state.singleMovieError} fetchSingleMovie={this.fetchSingleMovie}/>)}
           </div> : 
-          <Movie data={this.state.selectedMovie} clearSelectedMovie={this.clearSelectedMovie} />}
+          <Movie data={this.state.selectedMovie} clearSelectedMovie={this.clearSelectedMovie} videos={this.state.selectedMovieVideos}/>}
           <footer>
             {this.state.allMoviesError && <h3 className='error-message'>Sorry we are experiencing server issues right now! Please try again later!</h3>}
           </footer>

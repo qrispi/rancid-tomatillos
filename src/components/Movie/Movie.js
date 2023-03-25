@@ -5,7 +5,7 @@ import Genre from "../Genre/Genre";
 import Media from "../Media/Media";
 import MovieDescription from "../MovieDescription/MovieDescription";
 
-const Movie = ({data, clearSelectedMovie}) => {
+const Movie = ({data, clearSelectedMovie, videos}) => {
     return (
         <section className='Movie'>
             <Hero info={data}/>
