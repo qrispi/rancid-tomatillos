@@ -1,8 +1,14 @@
 .poster {
-   margin: 20px;
+   margin: 35px;
 }
 
 .poster-img {
-    width: 200px;
+    width: 250px;
     height: auto;
+    box-shadow: 5px 5px 10px #888888;
+}
+
+.poster-img:hover {
+    transform: translate(0, -13px);
+    box-shadow: 10px 10px 13px #888888;
 }
