@@ -1,0 +1,9 @@
+.Genre {
+    border: solid 1px red;
+    background-color: red;
+    border-radius: 3px;
+    width: fit-content;
+    margin: 10px;
+    padding: 5px;
+    color: white;
+}
