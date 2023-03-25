@@ -1,6 +1,7 @@
 .MovieDescription {
     display: flex;
     margin: 10px 25px;
+    justify-content: space-between;
 }
 
 .Stats {
@@ -10,14 +11,16 @@
     border-radius: 3px;
     border:rgb(234, 237, 237) solid 2px;
     background-color: rgb(234, 237, 237);
-    padding: 20px;
+    padding: 10px;
+    width: 30vw;
     min-width: 150px; 
+    height: 250px;
 }
 
 .Overview {
-    width: 45vw;
+    width: 55vw;
     padding: 5px;
-    padding-right: 20vw;
+    padding-right: 10vw;
 }
 
 .Tagline {
@@ -33,4 +36,16 @@
 
 .Stats h3 {
     text-align: center;
+}
+
+.Genre-container {
+    display: flex;
+    /* flex */
+}
+
+.Movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 10px;
 }

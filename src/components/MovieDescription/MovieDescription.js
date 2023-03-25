@@ -1,17 +1,21 @@
 import './MovieDescription.css';
+import Genre from '../Genre/Genre';
 
 const MovieDescription = ({info}) => {
     return (
         <div className='MovieDescription'>
-            <div>
+            <div className='Movie-info'>
                 {info.tagline && <h3 className='Tagline'>{info.tagline}</h3>}
                 {info.overview && <p className='Overview'>{info.overview}</p>}
+                <div className='Genre-container'>
+                    {info.genres.map(genre => <Genre key={genre} genre={genre}/>)}
+                </div>
             </div>
             <div className='Stats'>
-                {info.budget && info.revenue && info.runtime ? <h3>Stats:</h3> : <h3>Sorry, no stats</h3>}
-                {info.budget && <p>Budget: ${info.budget}</p>}
-                {info.revenue && <p>Revenue: ${info.revenue}</p>}
-                {info.runtime && <p>Runtime: {info.runtime} minutes</p>}
+                <h3>Stats:</h3>
+                {info.budget ? <p>Budget: ${info.budget}</p> : null}
+                {info.revenue ? <p>Revenue: ${info.revenue}</p> : null}
+                {info.runtime ? <p>Runtime: {info.runtime} min</p> : null}
             </div>
         </div>
     )
