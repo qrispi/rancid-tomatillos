@@ -31,7 +31,7 @@ export default class App extends Component {
               <img src={require('../../images/tomatillo.png')} alt='Picture of Tomatillo' className='tomatillo'/>
               <h1 className='title'>Rancid Tomatillos</h1>
             </div>
-            <h2><i>Find your next worst movie</i></h2>
+            <h2 className='tagline'><i>find your next worst movie...</i></h2>
           </div>
         </header>
         {!this.state.selectedMovie ? <div className='poster-container'>{this.state.movies.map(movie => <Poster key={movie.id} data={movie} fetchSingleMovie={this.fetchSingleMovie}/>)}</div> : <Movie data={this.state.selectedMovie} clearSelectedMovie={this.clearSelectedMovie} />}
