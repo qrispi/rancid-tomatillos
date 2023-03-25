@@ -3,7 +3,7 @@ import Genre from '../Genre/Genre';
 
 const MovieDescription = ({info}) => {
     return (
-        <div className='MovieDescription'>
+        <section className='MovieDescription'>
             <div className='Movie-info'>
                 {info.tagline && <h3 className='Tagline'>{info.tagline}</h3>}
                 {info.overview && <p className='Overview'>{info.overview}</p>}
@@ -11,13 +11,13 @@ const MovieDescription = ({info}) => {
                     {info.genres.map(genre => <Genre key={genre} genre={genre}/>)}
                 </div>
             </div>
-            <div className='Stats'>
+            <aside className='Stats'>
                 <h3>Stats:</h3>
                 {info.budget ? <p>Budget: ${info.budget}</p> : null}
                 {info.revenue ? <p>Revenue: ${info.revenue}</p> : null}
                 {info.runtime ? <p>Runtime: {info.runtime} min</p> : null}
-            </div>
-        </div>
+            </aside>
+        </section>
     )
 }
 
