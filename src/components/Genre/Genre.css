@@ -1,6 +1,6 @@
 .Genre {
-    border: solid 1px red;
-    background-color: red;
+    border: solid 1px rgb(3, 78, 3);
+    background-color: rgb(3, 78, 3);
     border-radius: 3px;
     width: fit-content;
     margin: 10px;
