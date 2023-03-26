@@ -10,6 +10,7 @@ const Movie = ({data, clearSelectedMovie, videos}) => {
             <button onClick={clearSelectedMovie}>Go Back</button>
             <Hero info={data}/>
             <MovieDescription info={data} />
+            {videos && <Media videos={videos} />}
         </section>
     )
 }
