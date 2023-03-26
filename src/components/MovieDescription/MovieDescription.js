@@ -2,6 +2,15 @@ import './MovieDescription.css';
 import Genre from '../Genre/Genre';
 
 const MovieDescription = ({info}) => {
+    const formatDollarString = num => {
+        if (num >= 100000000) {
+            return `$${(num/100000000).toFixed(1)} billion`
+        }
+        if (num >= 1000000) {
+            return `$${(num/1000000).toFixed(1)} million`
+        }
+        return `$${num}`
+    }
     return (
         <section className='MovieDescription'>
             <div className='Movie-info'>
