@@ -4,6 +4,7 @@
 
 .poster-img {
     width: 13vw;
+    min-width: 130px;
     height: auto;
     border-radius: 3px;
     box-shadow: 5px 5px 10px #888888;
