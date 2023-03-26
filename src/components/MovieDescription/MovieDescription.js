@@ -14,7 +14,7 @@ const MovieDescription = ({info}) => {
     return (
         <section className='MovieDescription'>
             <div className='Movie-info'>
-                {info.tagline && <h3 className='Tagline'>{info.tagline}</h3>}
+                <h3 className='Tagline'>{info.tagline ? info.tagline : 'The world\'s best tagline'}</h3>
                 {info.overview && <p className='Overview'>{info.overview}</p>}
                 <div className='Genre-container'>
                     {info.genres.map(genre => <Genre key={genre} genre={genre}/>)}
@@ -22,12 +22,14 @@ const MovieDescription = ({info}) => {
             </div>
             <aside className='Stats'>
                 <h3>Stats:</h3>
-                {info.budget ? <p>Budget: ${info.budget}</p> : null}
-                {info.revenue ? <p>Revenue: ${info.revenue}</p> : null}
-                {info.runtime ? <p>Runtime: {info.runtime} min</p> : null}
+                <p>Budget: {info.budget ? formatDollarString(info.budget) : '--'}</p>
+                <p>Revenue: {info.revenue ? formatDollarString(info.revenue) : '--'}</p>
+                <p>Runtime: {info.runtime ? `${info.runtime} min` : '--'}</p>
             </aside>
         </section>
     )
 }
+
+
 
 export default MovieDescription;
