@@ -17,7 +17,7 @@ Poster.propTypes = {
     data: PropTypes.shape({
         poster_path: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired
-    }).isRequired,
+    }),
     fetchSingleMovie: PropTypes.func.isRequired,
     error: PropTypes.string
 }
