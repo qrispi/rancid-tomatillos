@@ -1,8 +1,11 @@
 .hero {
-    height: 40vh;
+    height: 50vh;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    background-size: cover;
+    margin: 25px;
+    max-width: 1000px;
 }
 
 .opaque-background {
