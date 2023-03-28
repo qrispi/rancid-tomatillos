@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import './Movie.css';
 import Hero from "../Hero/Hero";
 import Media from "../Media/Media";

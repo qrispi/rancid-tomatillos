@@ -1,5 +1,6 @@
 import './Poster.css';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Poster = ({data, fetchSingleMovie, error}) => {
     return (

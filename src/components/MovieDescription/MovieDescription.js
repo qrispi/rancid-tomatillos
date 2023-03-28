@@ -1,3 +1,5 @@
+import React from 'react';
+import PropTypes from 'prop-types';
 import './MovieDescription.css';
 import Genre from '../Genre/Genre';
 

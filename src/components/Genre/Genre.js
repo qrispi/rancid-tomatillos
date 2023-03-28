@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import "./Genre.css"
 
 const Genre = (props) => {
@@ -8,3 +9,7 @@ const Genre = (props) => {
 }
 
 export default Genre;
+
+Genre.propTypes = {
+    genre: PropTypes.string.isRequired
+}
