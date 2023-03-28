@@ -12,3 +12,18 @@ const Poster = ({data, fetchSingleMovie, error}) => {
 }
 
 export default Poster;
+
+Poster.propTypes = {
+    data: PropTypes.shape({
+        poster_path: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired
+    }).isRequired,
+    fetchSingleMovie: PropTypes.func.isRequired,
+    error: PropTypes.string
+}
+
+Poster.defaultProps = {
+    data: {
+        poster_path: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfptVpQVR23mAxQ-SKqqRusGUaaiI98whu9w&usqp=CAU'
+    }
+}
