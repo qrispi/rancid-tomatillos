@@ -17,3 +17,9 @@ const Movie = ({data, clearSelectedMovie, videos}) => {
 }
 
 export default Movie;
+
+Movie.propTypes = {
+    data: PropTypes.object.isRequired,
+    clearSelectedMovie: PropTypes.func.isRequired,
+    videos: PropTypes.arrayOf(PropTypes.object)
+}

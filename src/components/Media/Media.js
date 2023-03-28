@@ -22,3 +22,7 @@ const Media = ({videos}) => {
 }
 
 export default Media;
+
+Media.propTypes = {
+    videos: PropTypes.arrayOf(PropTypes.object)
+}
