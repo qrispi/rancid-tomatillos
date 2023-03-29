@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 import './Movie.css';
 import Hero from "../Hero/Hero";
 import Media from "../Media/Media";
@@ -16,3 +17,9 @@ const Movie = ({data, clearSelectedMovie, videos}) => {
 }
 
 export default Movie;
+
+Movie.propTypes = {
+    data: PropTypes.object.isRequired,
+    clearSelectedMovie: PropTypes.func.isRequired,
+    videos: PropTypes.arrayOf(PropTypes.object)
+}
