@@ -10,10 +10,9 @@ class Movie extends Component {
     constructor() {
         super();
         this.state = {
-            selectedMovie: {},
+            selectedMovie: null,
             selectedMovieVideos: [],
             singleMovieError: [],
-            mounted: false
         }
     }
     componentDidMount = () => {
@@ -53,11 +52,11 @@ class Movie extends Component {
         return (
             <section className='Movie'>
                 <NavLink to='/'>
-                    <button onClick={this.unmount}>Go Back</button>
+                    <button onClick={() => this.unmount()}>Go Back</button>
                 </NavLink>
-                {this.state.mounted && <Hero info={this.state.selectedMovie}/>}
-                {this.state.mounted && <MovieDescription info={this.state.selectedMovie} />}
-                {this.state.mounted && <Media videos={this.state.selectedMovieVideos} />}
+                {this.state.selectedMovie && <Hero info={this.state.selectedMovie}/>}
+                {this.state.selectedMovie && <MovieDescription info={this.state.selectedMovie} />}
+                {this.state.selectedMovieVideos.length && <Media videos={this.state.selectedMovieVideos} />}
             </section>
         )
     }
@@ -65,13 +64,6 @@ class Movie extends Component {
 
 export default Movie;
 
-// Movie.propTypes = {
-//     data: PropTypes.object.isRequired,
-//     clearSelectedMovie: PropTypes.func.isRequired,
-//     videos: PropTypes.arrayOf(PropTypes.object)
-// }
-
-
-// {this.state.selectedMovieVideos && <Hero info={this.state.selectedMovie}/>}
-//                 {this.state.selectedMovieVideos && <MovieDescription info={this.state.selectedMovie} />}
-//                 {this.state.selectedMovieVideos && <Media videos={this.state.selectedMovieVideos} />}
+Movie.propTypes = {
+    movieId: PropTypes.number.isRequired
+}
