@@ -1,11 +1,12 @@
 describe('user should be able to go back home after viewing a single movie', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
-      .get('.poster').last().click()
+
   });
 
   it('should be able to go back to home page', () => {
-    cy.get('button').click()
+    cy.get('.poster').last().click()
+    cy.contains('Go Back').click()
       .get('.poster-container')
       .get('.poster').should('have.length', 40)
       .first().get('.poster-img')
