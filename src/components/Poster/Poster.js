@@ -1,9 +1,9 @@
 import './Poster.css';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Route, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Poster = ({data, fetchSingleMovie, error}) => {
+const Poster = ({data, error}) => {
     return (
         <NavLink key={data.id} to={`/${data.id}`}>
             <article className='poster'>
@@ -18,10 +18,9 @@ export default Poster;
 
 Poster.propTypes = {
     data: PropTypes.shape({
-        poster_path: PropTypes.string,
-        id: PropTypes.number
+        poster_path: PropTypes.string.isRequired,
+        id: PropTypes.number.isRequired
     }),
-    fetchSingleMovie: PropTypes.func,
     error: PropTypes.string
 }
 

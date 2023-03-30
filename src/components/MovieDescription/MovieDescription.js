@@ -36,12 +36,12 @@ export default MovieDescription;
 
 MovieDescription.propTypes = {
     info: PropTypes.shape({
-        tagline: PropTypes.string,
-        overview: PropTypes.string,
+        tagline: PropTypes.string.isRequired,
+        overview: PropTypes.string.isRequired,
         genres: PropTypes.arrayOf(PropTypes.string),
-        budget: PropTypes.number,
-        revenue: PropTypes.number,
-        runtime: PropTypes.number
+        budget: PropTypes.number.isRequired,
+        revenue: PropTypes.number.isRequired,
+        runtime: PropTypes.number.isRequired
     })
 }
 
