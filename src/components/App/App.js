@@ -28,41 +28,38 @@ export default class App extends Component {
       this.setState({movies: data.movies});
     });
   }
-  fetchSingleMovie = (movieId) => {
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
-      .then(response => {
-        if(!response.ok) {
-          this.setState({singleMovieError: [response.status, movieId]});
-          setTimeout(() => this.setState({singleMovieError: []}), 4000);
-        } else {
-          return response.json();
-        }
-      }
-    ).then(data => {
-      this.setState({selectedMovie: data.movie});
-      console.log("THE STATE IS SET")
-    });
-    fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}/videos`)
-      .then(response => {
-        if(!response.ok) {
-          this.setState({videosError: response.status})
-        } else {
-          return response.json();
-        }
-      }
-    ).then(data => {
-      this.setState({selectedMovieVideos: data.videos});
-    });
-  }
-  clearSelectedMovie = () => {
-    this.setState({selectedMovie: {}});
-  }
+  // fetchSingleMovie = (movieId) => {
+  //   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}`)
+  //     .then(response => {
+  //       if(!response.ok) {
+  //         this.setState({singleMovieError: [response.status, movieId]});
+  //         setTimeout(() => this.setState({singleMovieError: []}), 4000);
+  //       } else {
+  //         return response.json();
+  //       }
+  //     }
+  //   ).then(data => {
+  //     this.setState({selectedMovie: data.movie});
+  //     console.log("THE STATE IS SET")
+  //   });
+  //   fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${movieId}/videos`)
+  //     .then(response => {
+  //       if(!response.ok) {
+  //         this.setState({videosError: response.status})
+  //       } else {
+  //         return response.json();
+  //       }
+  //     }
+  //   ).then(data => {
+  //     this.setState({selectedMovieVideos: data.videos});
+  //   });
+  // }
+  // clearSelectedMovie = () => {
+  //   this.setState({selectedMovie: {}});
+  // }
   render() {
     return (
-      
-
       <main className="App">
-        {/* <Switch> */}
         <header>
           <div className='logo-wrapper'>
             <div className='title-wrapper'>
@@ -83,13 +80,10 @@ export default class App extends Component {
               <Poster key={movie.id} data={movie} error={this.state.singleMovieError} fetchSingleMovie={this.fetchSingleMovie}/>)}
             </div>
           </Route>
-          <Route path={`/${this.state.selectedMovie.id}`}>
-            {!this.state.selectedMovie.id ? <h4>FUCK YOU ROUTER</h4> : <Movie data={this.state.selectedMovie} clearSelectedMovie={this.clearSelectedMovie} videos={this.state.selectedMovieVideos}/> }
-          </Route>
+          <Route path="/:movieId" render={({match}) => <Movie movieId={parseInt(match.params.movieId)}/>} />
           <footer>
             {this.state.allMoviesError && <h3 className='error-message'>Sorry we are experiencing server issues right now! Please try again later!</h3>}
           </footer>
-      {/* </Switch> */}
       </main>
     )
   }
