@@ -8,7 +8,7 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: [],
+      movies: []
     }
   }
   componentDidMount = () => {
@@ -16,13 +16,16 @@ export default class App extends Component {
       .then(response => {
         if(!response.ok) {
           this.setState({allMoviesError: response.status});
+          return false;
         } else {
           return response.json();
         }
       }
     ).then(data => {
-      this.setState({movies: data.movies});
-    });
+      if (data) {
+        this.setState({movies: data.movies});
+      }
+    })
   }
   render() {
     return (
