@@ -1,19 +1,20 @@
 .movieDescription {
     display: flex;
-    margin: 10px 25px;
+    margin-left: 25px;
     justify-content: space-between;
     max-width: 1200px;
+    width: 87%;
 }
 
 .stats {
     display: flex;
     flex-direction: column;
-    margin: 20px;
+    margin: 25px 20px;
     border-radius: 3px;
     border:rgb(234, 237, 237) solid 2px;
     background-color: rgb(234, 237, 237);
     padding: 10px;
-    width: 30%;
+    width: 34%;
     min-width: 150px; 
     height: 250px;
     max-width: 200px;
@@ -23,12 +24,12 @@
     width: 55vw;
     max-width: 550px;
     padding: 5px;
-    padding-right: 10vw;
+    padding-right: 5vw;
 }
 
 .movie-tagline {
     border-left: rgb(13, 79, 13) solid 7px;
-    width: 65vw;
+    width: 55vw;
     padding: 5px;
     padding-left: 10px;
 }
@@ -51,4 +52,5 @@
     justify-content: space-between;
     padding-bottom: 10px;
     max-width: 800px;
+
 }

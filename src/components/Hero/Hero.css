@@ -6,6 +6,7 @@
     background-size: cover;
     margin: 25px;
     max-width: 1000px;
+    width: 100%;
 }
 
 .opaque-background {
