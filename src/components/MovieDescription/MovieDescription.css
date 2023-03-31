@@ -1,10 +1,10 @@
-.MovieDescription {
+.movieDescription {
     display: flex;
     margin: 10px 25px;
     justify-content: space-between;
 }
 
-.Stats {
+.stats {
     display: flex;
     flex-direction: column;
     margin: 20px;
@@ -17,20 +17,20 @@
     height: 250px;
 }
 
-.Overview {
+.overview {
     width: 55vw;
     padding: 5px;
     padding-right: 10vw;
 }
 
-.Tagline {
+.tagline {
     border-left: rgb(13, 79, 13) solid 7px;
     width: 65vw;
     padding: 5px;
     padding-left: 10px;
 }
 
-.Stats p {
+.stats p {
     font-size: medium;
 }
 
@@ -38,12 +38,11 @@
     text-align: center;
 }
 
-.Genre-container {
+.genre-container {
     display: flex;
-    /* flex */
 }
 
-.Movie-info {
+.Mmvie-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
