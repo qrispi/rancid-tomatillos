@@ -1,6 +1,8 @@
 describe('user should be able to go back home after viewing a single movie', () => {
   beforeEach(() => {
     cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies.json' });
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/505642', { fixture: 'single-movie-505642.json' });
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/505642/videos', { fixture: 'single-movie-videos-505642.json' });
     cy.visit('http://localhost:3000')
 
   });
