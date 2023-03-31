@@ -1,5 +1,6 @@
 describe('user should be able to go back home after viewing a single movie', () => {
   beforeEach(() => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies.json' });
     cy.visit('http://localhost:3000')
 
   });
@@ -8,7 +9,7 @@ describe('user should be able to go back home after viewing a single movie', () 
     cy.get('.poster').last().click()
     cy.contains('Go Back').click()
       .get('.poster-container')
-      .get('.poster').should('have.length', 40)
+      .get('.poster').should('have.length', 4)
       .first().get('.poster-img')
       .should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg')
   });  
