@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import "./Header.css";
-import { NavLink } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -12,9 +12,13 @@ const Header = () => {
               <h1 className='title'>Rancid Tomatillos</h1>
             </div>
             <NavLink to='/' className='back-navlink'>
-                <button className="back-button">Go Back</button>
+                <Route path='/:movieId'>
+                    <button className="back-button">Go Back</button>
+                </Route>
             </NavLink>
-            {/* <input type='search' className="search-bar" placeholder="Search for a movie..."/> */}
+            <Route exact path='/'>
+                <input type='search' className="search-bar" placeholder="Search for a movie..."/>
+            </Route>
             <p className='tagline'>find your next worst movie...</p>
           </div>
         </header>
