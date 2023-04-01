@@ -8,6 +8,7 @@ const Hero = ({info}) => {
             <h2 className='opaque-background'>{info.title}</h2>
             <p className='opaque-background' >Release Year: {info.release_date}</p>
             <p className='opaque-background' >Rating: {info.average_rating}</p>
+            <h3 className='movie-tagline opaque-background'>{info.tagline ? info.tagline : 'The world\'s best tagline'}</h3>
         </div>
     )
 }

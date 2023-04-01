@@ -26,13 +26,6 @@
     padding-right: 5vw;
 }
 
-.movie-tagline {
-    border-left: rgb(13, 79, 13) solid 7px;
-    width: 55vw;
-    padding: 5px;
-    padding-left: 10px;
-}
-
 .stats p {
     font-size: medium;
     margin: 5px;
