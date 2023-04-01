@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 const Poster = ({data, error}) => {
     return (
         <NavLink className='nav' key={data.id} to={`/${data.id}`} >
-                <img className='poster-img' src={data.poster_path} />
+                <img className='poster-img' src={data.poster_path} loading="lazy" alt={`Movie Poster of ${data.title}`}/>
                 {error && error[1] === data.id && <p className='poster-error'>Sorry we can't find any details for this movie right now!</p>}
         </NavLink>
     )
