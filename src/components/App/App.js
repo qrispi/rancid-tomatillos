@@ -31,18 +31,20 @@ export default class App extends Component {
     })
   }
   searchMovies = (input) => {
-    console.log(input)
-    const filtered = this.state.movies.filter(movie => movie.title.toLowerCase().includes(input.input.toLowerCase()))
-    this.setState({filteredMovies: filtered})
+    const filtered = this.state.movies.filter(movie => movie.title.toLowerCase().includes(input.input.toLowerCase()));
+    this.setState({filteredMovies: filtered});
     if(!filtered.length) {
-      this.setState({noFilteredMovies: true})
+      this.setState({noFilteredMovies: true});
     }
+  }
+  clearFilteredMovies = () => {
+    this.setState({filteredMovies: [], noFilteredMovies: false});
   }
   render() {
     const filteredMovies = this.state.filteredMovies.map(movie => 
-      <Poster key={movie.id} data={movie} error={this.state.singleMovieError} />)
+      <Poster key={movie.id} data={movie} error={this.state.singleMovieError} clearSearch={this.clearFilteredMovies}/>);
     const allMovies = this.state.movies.map(movie => 
-      <Poster key={movie.id} data={movie} error={this.state.singleMovieError} />)
+      <Poster key={movie.id} data={movie} error={this.state.singleMovieError} clearSearch={this.clearFilteredMovies}/>);
     return (
       <main className="app">
         <Header search={this.searchMovies}/>
