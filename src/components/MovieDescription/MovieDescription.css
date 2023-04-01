@@ -9,20 +9,19 @@
 .stats {
     display: flex;
     flex-direction: column;
-    margin: 25px 20px;
+    margin: 0 20px 20px;;
     border-radius: 3px;
     border:rgb(234, 237, 237) solid 2px;
     background-color: rgb(234, 237, 237);
-    padding: 10px;
+    padding: 0 10px;
     width: 34%;
     min-width: 150px; 
-    height: 250px;
     max-width: 200px;
 }
 
 .overview {
-    width: 55vw;
-    max-width: 550px;
+    width: 65vw;
+    max-width: 660px;
     padding: 5px;
     padding-right: 5vw;
 }
@@ -36,10 +35,12 @@
 
 .stats p {
     font-size: medium;
+    margin: 5px;
 }
 
-.Stats h3 {
+.stats h3 {
     text-align: center;
+    margin: 0;
 }
 
 .genre-container {
@@ -52,5 +53,4 @@
     justify-content: space-between;
     padding-bottom: 10px;
     max-width: 800px;
-
 }
