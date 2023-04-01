@@ -16,7 +16,7 @@ const MovieDescription = ({info}) => {
     return (
         <section className='movieDescription'>
             <div className='movie-info'>
-                <h3 className='tagline'>{info.tagline ? info.tagline : 'The world\'s best tagline'}</h3>
+                <h3 className='movie-tagline'>{info.tagline ? info.tagline : 'The world\'s best tagline'}</h3>
                 {info.overview && <p className='overview'>{info.overview}</p>}
                 <div className='genre-container'>
                     {info.genres.map(genre => <Genre key={genre} genre={genre}/>)}
