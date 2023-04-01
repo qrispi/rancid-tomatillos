@@ -2,6 +2,7 @@ import './App.css';
 import React, {Component} from 'react';
 import Poster from '../Poster/Poster';
 import Movie from '../Movie/Movie';
+import Header from '../Header/Header';
 import { Route } from 'react-router-dom';
 
 export default class App extends Component {
@@ -29,16 +30,8 @@ export default class App extends Component {
   }
   render() {
     return (
-      <main className="App">
-        <header>
-          <div className='logo-wrapper'>
-            <div className='title-wrapper'>
-              <img src={require('../../images/tomatillo-wrapped.png')} alt='Picture of Tomatillo' className='tomatillo'/>
-              <h1 className='title'>Rancid Tomatillos</h1>
-            </div>
-            <p className='tagline'>find your next worst movie...</p>
-          </div>
-        </header>
+      <main className="app">
+        <Header />
         <Route exact path="/">
           <div className='poster-container'>
             {this.state.movies.map(movie => 

@@ -4,7 +4,7 @@ import "./Genre.css"
 
 const Genre = (props) => {
     return (
-        <p className='Genre'>{props.genre}</p>
+        <p className='genre'>{props.genre}</p>
     )
 }
 

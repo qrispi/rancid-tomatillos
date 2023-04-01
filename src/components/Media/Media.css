@@ -16,12 +16,16 @@
     width: 50vw;
     height: 27vw;
     border-radius: 3px;
+    border: none;
     max-width: 800px;
     max-height: 450px;
+    filter: drop-shadow(3px 3px 5px #888888);
 }
 
 .small-video {
     width: 20vw;
     height: 12vw;
     border-radius: 3px;
+    border: none;
+    filter: drop-shadow(3px 3px 5px #888888);
 }
