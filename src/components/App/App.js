@@ -28,10 +28,13 @@ export default class App extends Component {
       }
     })
   }
+  searchMovies = (input) => {
+    console.log(input.input)
+  }
   render() {
     return (
       <main className="app">
-        <Header />
+        <Header search={this.searchMovies}/>
         <Route exact path="/">
           <div className='poster-container'>
             {this.state.movies.map(movie => 

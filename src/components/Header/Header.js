@@ -4,7 +4,7 @@ import "./Header.css";
 import Search from "../Search/Search";
 import { Route, NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header = ({search}) => {
     return (
         <header>
           <div className='logo-wrapper'>
@@ -18,7 +18,7 @@ const Header = () => {
                 </Route>
             </NavLink>
             <Route exact path='/'>
-                <Search />
+                <Search search={search}/>
             </Route>
             <p className='tagline'>find your next worst movie...</p>
           </div>
