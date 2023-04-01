@@ -10,16 +10,18 @@
 }
 
 .opaque-background {
-    background-color: rgba(3, 78, 3, 0.8);
+    background-color: rgba(3, 78, 3, 0.6);
     color: white;
-    border: solid 1px  rgba(3, 78, 3, 0.8);
+    /* border: solid 1px  rgba(3, 78, 3, 0.8); */
     border-radius: 3px;
     margin-left: 50px;
     padding: 8px;
 }
 
 .movie-tagline {
-    border-left: rgb(128, 22, 22) solid 7px;
-    margin-top: 200px;
-    background-color: rgba(99, 62, 62, 0.9);
+    align-self: flex-end;
+    border-left: rgb(3, 78, 3) solid 7px;
+    margin-top: 10vh;
+    margin-right: 3vw;
+    background-color: rgba(3, 78, 3, 0.6);
 }
