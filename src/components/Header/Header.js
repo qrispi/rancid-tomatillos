@@ -11,9 +11,10 @@ const Header = () => {
               <img src={require('../../images/tomatillo-wrapped.png')} alt='Picture of Tomatillo' className='tomatillo'/>
               <h1 className='title'>Rancid Tomatillos</h1>
             </div>
-            <NavLink to='/'>
+            {/* <NavLink to='/'>
                 <button className="back-button">Go Back</button>
-            </NavLink>
+            </NavLink> */}
+            <input type='search' className="search-bar" placeholder="Search for a movie..."/>
             <p className='tagline'>find your next worst movie...</p>
           </div>
         </header>
