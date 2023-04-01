@@ -10,7 +10,8 @@ export default class App extends Component {
     super();
     this.state = {
       movies: [],
-      filteredMovies: []
+      filteredMovies: [],
+      noFilteredMovies: false
     }
   }
   componentDidMount = () => {
@@ -33,6 +34,9 @@ export default class App extends Component {
     console.log(input)
     const filtered = this.state.movies.filter(movie => movie.title.toLowerCase().includes(input.input.toLowerCase()))
     this.setState({filteredMovies: filtered})
+    if(!filtered.length) {
+      this.setState({noFilteredMovies: true})
+    }
   }
   render() {
     const filteredMovies = this.state.filteredMovies.map(movie => 
@@ -44,7 +48,7 @@ export default class App extends Component {
         <Header search={this.searchMovies}/>
         <Route exact path="/">
           <div className='poster-container'>
-            {(filteredMovies.length && filteredMovies) || allMovies}
+            {(filteredMovies.length && filteredMovies) || (this.state.noFilteredMovies && <p className='no-search-msg'>We don't have any movies that match that title. Please search a different title!</p>) || allMovies}
           </div>
         </Route>
         <Route path="/:movieId" render={({match}) => <Movie movieId={parseInt(match.params.movieId)} />} />
