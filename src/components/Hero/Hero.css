@@ -1,12 +1,8 @@
 .hero {
-    height: 50vh;
+    height: 40vh;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
-    background-size: cover;
-    margin: 10px;
-    max-width: 1000px;
-    width: 100%;
 }
 
 .opaque-background {
@@ -16,10 +12,4 @@
     border-radius: 3px;
     margin-left: 50px;
     padding: 8px;
-}
-
-.movie-tagline {
-    border-left: rgb(128, 22, 22) solid 7px;
-    margin-top: 200px;
-    background-color: rgba(99, 62, 62, 0.9);
 }

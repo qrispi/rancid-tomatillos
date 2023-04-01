@@ -16,6 +16,7 @@ const MovieDescription = ({info}) => {
     return (
         <section className='movieDescription'>
             <div className='movie-info'>
+                <h3 className='movie-tagline'>{info.tagline ? info.tagline : 'The world\'s best tagline'}</h3>
                 {info.overview && <p className='overview'>{info.overview}</p>}
                 <div className='genre-container'>
                     {info.genres.map(genre => <Genre key={genre} genre={genre}/>)}
@@ -35,6 +36,7 @@ export default MovieDescription;
 
 MovieDescription.propTypes = {
     info: PropTypes.shape({
+        tagline: PropTypes.string.isRequired,
         overview: PropTypes.string.isRequired,
         genres: PropTypes.arrayOf(PropTypes.string),
         budget: PropTypes.number.isRequired,
@@ -45,6 +47,7 @@ MovieDescription.propTypes = {
 
 MovieDescription.defaultProps = {
     info: {
+        tagline: 'The world\'s best tagline',
         overview: 'Trust me bro, just go and see it!',
         budget: '--',
         revenue: '--',

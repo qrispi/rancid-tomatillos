@@ -1,6 +1,6 @@
 header {
   width: 95%;
-  margin: 0 2vw 2vh;
+  margin: 0 2vw 10vh;
 }
 
 .title {
@@ -57,10 +57,4 @@ header {
   text-align: center;
   font-size: 5rem;
   color: red;
-}
-
-.App {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }

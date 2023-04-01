@@ -1,8 +1,7 @@
 .media {
-    margin: 0 25px 25px 31px;
+    margin: 25px 40px 25px 25px;
     display: flex;
     justify-content: space-between;
-    width: 85.6%;
 }
 
 .multiple-videos {
@@ -13,15 +12,13 @@
 }
 
 .main-video {
-    width: 50vw;
-    height: 27vw;
+    width: 65vw;
+    height: 36.6vw;
     border-radius: 3px;
-    max-width: 800px;
-    max-height: 450px;
 }
 
 .small-video {
-    width: 20vw;
-    height: 12vw;
+    width: 25vw;
+    height: 14vw;
     border-radius: 3px;
 }

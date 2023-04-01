@@ -1,39 +1,41 @@
 .movieDescription {
     display: flex;
-    margin-left: 25px;
+    margin: 10px 25px;
     justify-content: space-between;
-    max-width: 1200px;
-    width: 87%;
 }
 
 .stats {
     display: flex;
     flex-direction: column;
-    margin: 0 20px 20px;;
+    margin: 20px;
     border-radius: 3px;
     border:rgb(234, 237, 237) solid 2px;
     background-color: rgb(234, 237, 237);
-    padding: 0 10px;
-    width: 34%;
+    padding: 10px;
+    width: 30vw;
     min-width: 150px; 
-    max-width: 200px;
+    height: 250px;
 }
 
 .overview {
-    width: 65vw;
-    max-width: 660px;
+    width: 55vw;
     padding: 5px;
-    padding-right: 5vw;
+    padding-right: 10vw;
+}
+
+.movie-tagline {
+    border-left: rgb(13, 79, 13) solid 7px;
+    width: 65vw;
+    padding: 5px;
+    padding-left: 10px;
 }
 
 .stats p {
     font-size: medium;
-    margin: 5px;
 }
 
-.stats h3 {
+.Stats h3 {
     text-align: center;
-    margin: 0;
 }
 
 .genre-container {
@@ -45,5 +47,4 @@
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: 10px;
-    max-width: 800px;
 }
