@@ -2,6 +2,7 @@ import './App.css';
 import React, {Component} from 'react';
 import Poster from '../Poster/Poster';
 import Movie from '../Movie/Movie';
+import Header from '../Header/Header';
 import { Route } from 'react-router-dom';
 
 export default class App extends Component {
