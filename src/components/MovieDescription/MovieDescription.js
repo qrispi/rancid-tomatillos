@@ -35,7 +35,6 @@ export default MovieDescription;
 
 MovieDescription.propTypes = {
     info: PropTypes.shape({
-        tagline: PropTypes.string.isRequired,
         overview: PropTypes.string.isRequired,
         genres: PropTypes.arrayOf(PropTypes.string),
         budget: PropTypes.number.isRequired,
@@ -46,7 +45,6 @@ MovieDescription.propTypes = {
 
 MovieDescription.defaultProps = {
     info: {
-        tagline: 'The world\'s best tagline',
         overview: 'Trust me bro, just go and see it!',
         budget: '--',
         revenue: '--',
