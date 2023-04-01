@@ -14,15 +14,15 @@ const MovieDescription = ({info}) => {
         return `$${num}`
     }
     return (
-        <section className='MovieDescription'>
-            <div className='Movie-info'>
-                <h3 className='Tagline'>{info.tagline ? info.tagline : 'The world\'s best tagline'}</h3>
-                {info.overview && <p className='Overview'>{info.overview}</p>}
-                <div className='Genre-container'>
+        <section className='movieDescription'>
+            <div className='movie-info'>
+                <h3 className='movie-tagline'>{info.tagline ? info.tagline : 'The world\'s best tagline'}</h3>
+                {info.overview && <p className='overview'>{info.overview}</p>}
+                <div className='genre-container'>
                     {info.genres.map(genre => <Genre key={genre} genre={genre}/>)}
                 </div>
             </div>
-            <aside className='Stats'>
+            <aside className='stats'>
                 <h3>Stats:</h3>
                 <p>Budget: {info.budget ? formatDollarString(info.budget) : '--'}</p>
                 <p>Revenue: {info.revenue ? formatDollarString(info.revenue) : '--'}</p>

@@ -1,23 +1,23 @@
-.Media {
+.media {
     margin: 25px 40px 25px 25px;
     display: flex;
     justify-content: space-between;
 }
 
-.Multiple-videos {
+.multiple-videos {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin-bottom: 4px;
 }
 
-.Main-video {
+.main-video {
     width: 65vw;
     height: 36.6vw;
     border-radius: 3px;
 }
 
-.Small-video {
+.small-video {
     width: 25vw;
     height: 14vw;
     border-radius: 3px;

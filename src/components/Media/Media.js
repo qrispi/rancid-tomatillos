@@ -7,15 +7,15 @@ const Media = ({videos}) => {
     const trailer = videos.find(video => video.type === "Trailer")
 
     return (
-        <section className='Media'>
+        <section className='media'>
             <div >
-                {trailer && <iframe className='Main-video' src={`https://www.youtube.com/embed/${trailer.key}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowFullScreen></iframe>}
+                {trailer && <iframe className='main-video' src={`https://www.youtube.com/embed/${trailer.key}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowFullScreen></iframe>}
             </div>
-            <div className='Multiple-videos'>
+            <div className='multiple-videos'>
 
-                {videoKeys[0] && <iframe className='Small-video' src={`https://www.youtube.com/embed/${videoKeys[1]}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowFullScreen></iframe>}
+                {videoKeys[0] && <iframe className='small-video' src={`https://www.youtube.com/embed/${videoKeys[1]}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowFullScreen></iframe>}
 
-                {videoKeys[1] && <iframe className='Small-video' src={`https://www.youtube.com/embed/${videoKeys[2]}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowFullScreen></iframe>}
+                {videoKeys[1] && <iframe className='small-video' src={`https://www.youtube.com/embed/${videoKeys[2]}`} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" allowFullScreen></iframe>}
             </div>
         </section>
     )

@@ -36,7 +36,7 @@ export default class App extends Component {
               <img src={require('../../images/tomatillo-wrapped.png')} alt='Picture of Tomatillo' className='tomatillo'/>
               <h1 className='title'>Rancid Tomatillos</h1>
             </div>
-            <h2 className='tagline'><i>find your next worst movie...</i></h2>
+            <p className='tagline'>find your next worst movie...</p>
           </div>
         </header>
         <Route exact path="/">
