@@ -1,7 +1,3 @@
-/* .poster {
-   margin: 2.5vw;
-} */
-
 .poster-img {
     width: 13vw;
     min-width: 130px;
@@ -20,6 +16,7 @@
     width: 13vw;
     color: red;
 }
+
 .nav {
     width: 13vw;
     min-width: 130px;

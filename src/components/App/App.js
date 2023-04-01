@@ -30,7 +30,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <main className="App">
+      <main className="app">
         <Header />
         <Route exact path="/">
           <div className='poster-container'>

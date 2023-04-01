@@ -13,7 +13,7 @@
   color: red;
 }
 
-.App {
+.app {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -41,7 +41,7 @@ class Movie extends Component {
     }
     render() {
         return (
-            <section className='Movie'>
+            <section className='movie'>
                 {this.state.selectedMovie && <Hero info={this.state.selectedMovie}/>}
                 {this.state.selectedMovie && <MovieDescription info={this.state.selectedMovie} />}
                 {this.state.selectedMovieVideos.length && <Media videos={this.state.selectedMovieVideos} />}
