@@ -1,0 +1,11 @@
+.search-bar {
+  font-family: inherit;
+  font-size: 2rem;
+  width: 40vw;
+  margin: 4vh 0 0 11vw;
+  padding: 1vh 0 1vh 1vw;
+  border: solid 1.5px  rgba(3, 78, 3, 0.8);
+  filter: drop-shadow(1px 1px 1px #888888);
+  border-radius: 3px;
+  font-weight: 600;
+}

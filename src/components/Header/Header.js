@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 import "./Header.css";
+import Search from "../Search/Search";
 import { Route, NavLink } from 'react-router-dom';
 
 const Header = () => {
@@ -17,7 +18,7 @@ const Header = () => {
                 </Route>
             </NavLink>
             <Route exact path='/'>
-                <input type='search' className="search-bar" placeholder="Search for a movie..."/>
+                <Search />
             </Route>
             <p className='tagline'>find your next worst movie...</p>
           </div>
