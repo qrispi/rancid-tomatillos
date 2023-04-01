@@ -42,7 +42,7 @@
     display: flex;
 }
 
-.Mmvie-info {
+.movie-info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
