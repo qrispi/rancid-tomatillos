@@ -44,7 +44,7 @@ class Movie extends Component {
         return (
             <section className='Movie'>
                 <NavLink to='/'>
-                    <button>Go Back</button>
+                    <button className="back-button">Go Back</button>
                 </NavLink>
                 {this.state.selectedMovie && <Hero info={this.state.selectedMovie}/>}
                 {this.state.selectedMovie && <MovieDescription info={this.state.selectedMovie} />}
