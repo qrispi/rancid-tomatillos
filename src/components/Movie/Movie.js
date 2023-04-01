@@ -4,7 +4,6 @@ import './Movie.css';
 import Hero from "../Hero/Hero";
 import Media from "../Media/Media";
 import MovieDescription from "../MovieDescription/MovieDescription";
-import { NavLink } from 'react-router-dom';
 
 class Movie extends Component {
     constructor() {
@@ -43,9 +42,6 @@ class Movie extends Component {
     render() {
         return (
             <section className='Movie'>
-                <NavLink to='/'>
-                    <button className="back-button">Go Back</button>
-                </NavLink>
                 {this.state.selectedMovie && <Hero info={this.state.selectedMovie}/>}
                 {this.state.selectedMovie && <MovieDescription info={this.state.selectedMovie} />}
                 {this.state.selectedMovieVideos.length && <Media videos={this.state.selectedMovieVideos} />}
