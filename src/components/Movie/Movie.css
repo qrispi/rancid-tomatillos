@@ -4,6 +4,15 @@
     align-items: flex-start;
 }
 
+.Movie {
+    max-width: 1500px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
 .back-button {
     font-family:  inherit;
     background-color: rgba(3, 78, 3, 0.8);

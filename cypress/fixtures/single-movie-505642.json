@@ -1,0 +1,20 @@
+{
+    "movie": {
+      "id": 505642,
+      "title": "Black Panther: Wakanda Forever",
+      "poster_path": "https://image.tmdb.org/t/p/original//ps2oKfhY6DL3alynlSqY97gHSsg.jpg",
+      "backdrop_path": "https://image.tmdb.org/t/p/original//xDMIl84Qo5Tsu62c9DGWhmPI67A.jpg",
+      "release_date": "2022-11-09",
+      "overview": "Queen Ramonda, Shuri, M’Baku, Okoye and the Dora Milaje fight to protect their nation from intervening world powers in the wake of King T’Challa’s death. As the Wakandans strive to embrace their next chapter, the heroes must band together with the help of War Dog Nakia and Everett Ross and forge a new path for the kingdom of Wakanda.",
+      "genres": [
+        "Action",
+        "Adventure",
+        "Science Fiction"
+      ],
+      "budget": 250000000,
+      "revenue": 733000000,
+      "runtime": 162,
+      "tagline": "Forever.",
+      "average_rating": 4
+    }
+  }
