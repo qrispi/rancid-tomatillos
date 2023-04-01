@@ -9,7 +9,7 @@
 .stats {
     display: flex;
     flex-direction: column;
-    margin: 0 20px 20px;;
+    margin: 0 20px 20px;
     border-radius: 3px;
     border:rgb(234, 237, 237) solid 2px;
     background-color: rgb(234, 237, 237);
