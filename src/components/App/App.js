@@ -9,7 +9,8 @@ export default class App extends Component {
   constructor() {
     super();
     this.state = {
-      movies: []
+      movies: [],
+      filteredMovies: []
     }
   }
   componentDidMount = () => {
@@ -29,16 +30,21 @@ export default class App extends Component {
     })
   }
   searchMovies = (input) => {
-    console.log(input.input)
+    console.log(input)
+    const filtered = this.state.movies.filter(movie => movie.title.toLowerCase().includes(input.input.toLowerCase()))
+    this.setState({filteredMovies: filtered})
   }
   render() {
+    const filteredMovies = this.state.filteredMovies.map(movie => 
+      <Poster key={movie.id} data={movie} error={this.state.singleMovieError} />)
+    const allMovies = this.state.movies.map(movie => 
+      <Poster key={movie.id} data={movie} error={this.state.singleMovieError} />)
     return (
       <main className="app">
         <Header search={this.searchMovies}/>
         <Route exact path="/">
           <div className='poster-container'>
-            {this.state.movies.map(movie => 
-            <Poster key={movie.id} data={movie} error={this.state.singleMovieError} />)}
+            {(filteredMovies.length && filteredMovies) || allMovies}
           </div>
         </Route>
         <Route path="/:movieId" render={({match}) => <Movie movieId={parseInt(match.params.movieId)} />} />
