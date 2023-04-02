@@ -4,6 +4,7 @@ import Poster from '../Poster/Poster';
 import Movie from '../Movie/Movie';
 import Header from '../Header/Header';
 import { Route } from 'react-router-dom';
+import fetchData from '../../api-calls';
 
 export default class App extends Component {
   constructor() {
@@ -15,25 +16,17 @@ export default class App extends Component {
     }
   }
   componentDidMount = () => {
-    fetch('https://rancid-tomatillos.herokuapp.com/api/v2/movies')
-      .then(response => {
-        if(!response.ok) {
-          this.setState({allMoviesError: response.status});
-          return false;
-        } else {
-          return response.json();
-        }
-      }
-    ).then(data => {
-      if (data) {
-        this.setState({movies: data.movies});
-      }
+   fetchData('movies').then(data => {
+      this.setState({movies: data.movies});
+    }).catch(error => {
+      this.setState({allMoviesError: error});
     })
   }
   mapPosters = (movies) => {
     return movies.map(movie => 
       <Poster key={movie.id} data={movie} error={this.state.singleMovieError} clearSearch={this.clearFilteredMovies}/>);
   }
+
   searchMovies = (input) => {
     const filtered = this.state.movies.filter(movie => movie.title.toLowerCase().includes(input.input.toLowerCase()));
     this.setState({filteredMovies: filtered});
@@ -55,7 +48,7 @@ export default class App extends Component {
             {(filteredMovies.length && filteredMovies) || (this.state.noFilteredMovies && <p className='no-search-msg'>We don't have any movies that match that title. Please search a different title!</p>) || allMovies}
           </div>
         </Route>
-        <Route path="/:movieId" render={({match}) => <Movie movieId={parseInt(match.params.movieId)} />} />
+        <Route path="/:movieId" render={({match}) => <Movie movieId={parseInt(match.params.movieId)} logErrors={this.logMovieErrors}/>} />
         <footer>
           {this.state.allMoviesError && <h3 className='error-message'>Sorry we are experiencing server issues right now! Please try again later!</h3>}
         </footer>
