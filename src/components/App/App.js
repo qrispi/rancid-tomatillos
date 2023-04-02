@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 import Poster from '../Poster/Poster';
 import Movie from '../Movie/Movie';
 import Header from '../Header/Header';
-import { Route } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import fetchData from '../../api-calls';
 
 export default class App extends Component {
@@ -42,12 +42,23 @@ export default class App extends Component {
     return (
       <main className="app">
         <Header search={this.searchMovies}/>
-        <Route exact path="/">
-          <div className='poster-container'>
-            {(filteredMovies.length && filteredMovies) || (this.state.noFilteredMovies && <p className='no-search-msg'>We don't have any movies that match that title. Please search a different title!</p>) || allMovies}
-          </div>
-        </Route>
-        <Route path="/:movieId" render={({match}) => <Movie movieId={parseInt(match.params.movieId)} /> } />
+        <Switch>
+          <Route exact path="/">
+            <div className='poster-container'>
+              {(filteredMovies.length && filteredMovies) || (this.state.noFilteredMovies && <p className='no-search-msg'>We don't have any movies that match that title. Please search a different title!</p>) || allMovies}
+            </div>
+          </Route>
+          <Route path="/movie/:movieId" render={({match}) => <Movie movieId={parseInt(match.params.movieId)} /> } />
+          <Route path='/404'>
+            <div className='error'>
+              <h2>404 Error</h2>
+              <p>💩 Page not found 💩</p>
+            </div>
+          </Route>
+          <Route path='*'>
+            <Redirect to='/404'/>
+          </Route>
+        </Switch>
         <footer>
           {this.state.allMoviesError && <p className='error-message'>Sorry we are experiencing server issues right now! Please try again later!</p>}
         </footer>

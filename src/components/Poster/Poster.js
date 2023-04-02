@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 
 const Poster = ({data, clearSearch}) => {
     return (
-        <NavLink className='nav' key={data.id} to={`/${data.id}`} onClick={clearSearch}>
+        <NavLink className='nav' key={data.id} to={`/movie/${data.id}`} onClick={clearSearch}>
                 <img className='poster-img' src={data.poster_path} loading="lazy" alt={`Movie Poster of ${data.title}`}/>
         </NavLink>
     )

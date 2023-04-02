@@ -23,3 +23,9 @@
   margin-top: 10vh;
   font-size: 3rem;
 }
+
+.error {
+  font-size: xx-large;
+  text-align: center;
+  color: red;
+}
