@@ -19,7 +19,7 @@ Poster.propTypes = {
         poster_path: PropTypes.string.isRequired,
         id: PropTypes.number.isRequired
     }),
-    error: PropTypes.string
+    error: PropTypes.array
 }
 
 Poster.defaultProps = {

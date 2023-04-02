@@ -16,12 +16,12 @@ class Movie extends Component {
         }
     }
     componentDidMount = () => {
-        fetchData(`movies/${this.props.movieId}`).then(data => {
+        fetchData(`movis/${this.props.movieId}`).then(data => {
             this.setState({selectedMovie: data.movie});
         }).catch(error => {
-            // this.props.logError()
+            this.props.logError(error, this.props.movieId)
         })
-        fetchData(`movies/${this.props.movieId}/videos`).then(data => {
+        fetchData(`moves/${this.props.movieId}/videos`).then(data => {
             this.setState({selectedMovieVideos: data.videos});
         }).catch(error => {
             console.log(error);
