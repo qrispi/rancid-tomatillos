@@ -15,16 +15,21 @@ class Movie extends Component {
             singleMovieError: [],
         }
     }
+    // logMovieErrors = (error, id) => {
+    //     this.setState({singleMovieError: [error, id]});
+    //     // setTimeout(() => this.setState({singleMovieError: []}), 4000);
+    //     this.setState({videosError: error});
+    //   }
     componentDidMount = () => {
         fetchData(`movis/${this.props.movieId}`).then(data => {
             this.setState({selectedMovie: data.movie});
         }).catch(error => {
-            this.props.logError(error, this.props.movieId)
+            this.setState({singleMovieError: [error, this.props.movieId]});
         })
-        fetchData(`moves/${this.props.movieId}/videos`).then(data => {
+        fetchData(`movies/${this.props.movieId}/videos`).then(data => {
             this.setState({selectedMovieVideos: data.videos});
         }).catch(error => {
-            console.log(error);
+            this.setState({videosError: error});
         })
         // fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${this.props.movieId}`)
         //   .then(response => {
@@ -53,6 +58,7 @@ class Movie extends Component {
     render() {
         return (
             <section className='movie'>
+                {this.state.singleMovieError && <p className='poster-error'>Sorry, we can't find any details for this movie right now!</p>}
                 {this.state.selectedMovie && <Hero info={this.state.selectedMovie}/>}
                 {this.state.selectedMovie && <MovieDescription info={this.state.selectedMovie} />}
                 {this.state.selectedMovieVideos.length && <Media videos={this.state.selectedMovieVideos} />}

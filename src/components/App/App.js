@@ -24,13 +24,9 @@ export default class App extends Component {
   }
   mapPosters = (movies) => {
     return movies.map(movie => 
-      <Poster key={movie.id} data={movie} error={this.state.singleMovieError} clearSearch={this.clearFilteredMovies}/>);
+      <Poster key={movie.id} data={movie} clearSearch={this.clearFilteredMovies}/>);
   }
-  logMovieErrors = (error, id) => {
-    this.setState({singleMovieError: [error, id]});
-    setTimeout(() => this.setState({singleMovieError: []}), 4000);
-            // this.setState({videosError: error});
-  }
+  
   searchMovies = (input) => {
     const filtered = this.state.movies.filter(movie => movie.title.toLowerCase().includes(input.input.toLowerCase()));
     this.setState({filteredMovies: filtered});
@@ -52,7 +48,7 @@ export default class App extends Component {
             {(filteredMovies.length && filteredMovies) || (this.state.noFilteredMovies && <p className='no-search-msg'>We don't have any movies that match that title. Please search a different title!</p>) || allMovies}
           </div>
         </Route>
-        <Route path="/:movieId" render={({match}) => !this.state.singleMovieError ? <Movie movieId={parseInt(match.params.movieId)} logError={this.logMovieErrors}/> : <div className='poster-container'>{allMovies}</div> } />
+        <Route path="/:movieId" render={({match}) => <Movie movieId={parseInt(match.params.movieId)} logError={this.logMovieErrors}/> } />
         <footer>
           {this.state.allMoviesError && <h3 className='error-message'>Sorry we are experiencing server issues right now! Please try again later!</h3>}
         </footer>
