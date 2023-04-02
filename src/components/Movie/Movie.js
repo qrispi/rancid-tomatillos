@@ -5,6 +5,7 @@ import Hero from "../Hero/Hero";
 import Media from "../Media/Media";
 import MovieDescription from "../MovieDescription/MovieDescription";
 import fetchData from '../../api-calls';
+import { Redirect } from "react-router-dom";
 
 class Movie extends Component {
     constructor() {
@@ -12,14 +13,14 @@ class Movie extends Component {
         this.state = {
             selectedMovie: null,
             selectedMovieVideos: null,
-            singleMovieError: null,
+            singleMovieError: null
         }
     }
     componentDidMount = () => {
         fetchData(`movies/${this.props.movieId}`).then(data => {
             this.setState({selectedMovie: data.movie});
         }).catch(error => {
-            this.setState({singleMovieError: [error, this.props.movieId]});
+            this.setState({singleMovieError: error});
         })
         fetchData(`movies/${this.props.movieId}/videos`).then(data => {
             this.setState({selectedMovieVideos: data.videos});
@@ -28,6 +29,9 @@ class Movie extends Component {
         })
     }
     render() {
+      if (this.state.singleMovieError == 'Error: 404') {
+        return <Redirect to='/404'/>
+      }
         return (
             <section className='movie'>
                 {this.state.singleMovieError && <p className='poster-error'>Sorry, we can't find any details for this movie right now!</p>}
