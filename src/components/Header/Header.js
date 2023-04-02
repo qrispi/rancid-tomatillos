@@ -12,19 +12,19 @@ const Header = ({search}) => {
               <img src={require('../../images/tomatillo-wrapped.png')} alt='Picture of Tomatillo' className='tomatillo'/>
               <h1 className='title'>Rancid Tomatillos</h1>
             </div>
-            <NavLink to='/' className='back-navlink'>
-                <Route path='/:movieId'>
+            <Route path='/:movieId'>
+                <NavLink to='/' className='back-navlink'>
                     <button className="back-button">Go Back</button>
-                </Route>
-            </NavLink>
+                </NavLink>
+                <p className='tagline move-down' >find your next worst movie...</p>
+            </Route>
             <Route exact path='/'>
                 <Search search={search}/>
+                <p className='tagline move-up' >find your next worst movie...</p>
             </Route>
-            <p className='tagline'>find your next worst movie...</p>
           </div>
         </header>
     )
-
 }
 
 export default Header;
