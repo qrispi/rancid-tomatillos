@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Abstract:
+[//]: <>
+Rancid Tomatillos is a website where users can view movies that are fetched from an online server. The user has the ability to search for movies by title and can click on a movie poster to view more detailed information about the movie and watch related trailers/movie clips. 
+We utilized React to build the application with both functional components and class based components. We also utilized Router v5 to convert our single-page application into one that functions like a multi-page application with the ability to go directly to different URL paths to view individual movies. We also utilized controlled forms, React's state and Router to conditionally render relevant DOM elements while keeping load times to a minimum. Lighthouse scores our application at 100 for accessibility and we have zero WAVE errors. We also utilized Cypress end-to-end testing to thoroughly test all user stories and our error handling for server or client errors.
 
-## Available Scripts
+## Installation Instructions:
+[//]: <>
+1. Fork and clone [this repo](https://github.com/qrispi/rancid-tomatillos).
+1. Copy the SSH key from the green "Code" button.
+1. In your terminal, use the command `git clone git@github.com:[https://github.com/qrispi/rancid-tomatillos]`.
+1. Run `npm install`.
+1. Do NOT run `npm audit fix --force` when prompted.
+1. Open the repo in your text editor to make any changes or inspect code.
+1. Run `npm start` in your terminal.
+1. Copy and paste the generated `localServer` address that your terminal provides into your browser address bar.
 
-In the project directory, you can run:
+## Preview of App:
+[//]: <>
 
-### `npm start`
+![tomatillos-demo](https://user-images.githubusercontent.com/24902544/229373461-179080b7-5604-4613-9741-d24bf730ef9e.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Context:
+[//]: <> 
+- This project was completed in a week and a half sprint with two collaborators. We spent about 50 hours total on this project with about 2/3 of that time spent paired programming and the other third spent coding individually. This was our first time building an application using React & Router and testing it with Cypress.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Contributors:
+[//]: <>
+- [Amber Shipley](https://github.com/espressogoddess)
+- [Christopher Baum](https://github.com/qrispi)
 
-### `npm test`
+## Learning Goals:
+[//]: <>
+1. Gain competency with React fundamentals
+1. Learn how to test React components & asynchronous JS using Cypress
+1. Practice refactoring
+1. Create a multi-page UX using Router
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technologies Used:
+[//]: <>
+- Fetch API
+- Webpack
+- Cypress E2E Testing
+- React Framework
+- Router v5
+- LightHouse
+- Wave Evaluation
+- GitHub Issues & Project Board
+- JavaScript
+- CSS
+- HTML
 
-### `npm run build`
+## Wins + Challenges:
+[//]: <>
+- Wins:
+  - Implementing the search bar was very fun and an exciting exploration into React and the philosophy of 'data down, actions up'.
+  - We learned some of the finer intricacies of Git workflow by resolving merge conflicts, mis-placed merges, and partial commits.
+  - Utilizing Cypress to mock server errors and test the handling of these errors in real-time was very beneficial and helped solidify our use of dynamic error handling.
+- Challenges:
+  - Utilizing Router to conditionally render the individual movie details and trailers was quite challenging at first. Through talking with peers & mentors, reading documentation, and trial & error, we were able to do this successfully by converting the single movie component into a class based component and handling all fetches and state changes inside that component.
+  - Router NavLinks also gave us some frustration with their innate styling and functionality. Some of it was very useful while other pieces made it difficult to cohesively style the page. Through careful rendering and multiple CSS classes, we were able to overcome these difficulties.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Enhancement Wishlist:
+[//]: <>
+- Add tomatillo icons (instead of stars) on the Poster elements to show their ranking out of five.
+- Add ability to search for movies by genre.
+- Utilize server's ability to store individual users and submit their own rankings for the movies.
