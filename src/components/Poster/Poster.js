@@ -16,9 +16,10 @@ export default Poster;
 Poster.propTypes = {
     data: PropTypes.shape({
         poster_path: PropTypes.string.isRequired,
-        id: PropTypes.number.isRequired
+        id: PropTypes.number.isRequired,
+        title: PropTypes.string.isRequired
     }),
-    error: PropTypes.array
+    clearSearch: PropTypes.func.isRequired
 }
 
 Poster.defaultProps = {
