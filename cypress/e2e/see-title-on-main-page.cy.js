@@ -8,6 +8,6 @@ describe('App title should be shown on main page', () => {
     cy.get('header')
       .contains('h1', "Rancid Tomatillos")
     cy.get('header')
-      .contains('h2', "find your next worst movie...")
+      .contains('p', "find your next worst movie...")
   });
 });

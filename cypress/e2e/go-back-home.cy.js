@@ -8,10 +8,10 @@ describe('user should be able to go back home after viewing a single movie', () 
   });
 
   it('should be able to go back to home page', () => {
-    cy.get('.poster').last().click()
+    cy.get('.poster-img').last().click()
     cy.contains('Go Back').click()
       .get('.poster-container')
-      .get('.poster').should('have.length', 4)
+      .get('.poster-img').should('have.length', 4)
       .first().get('.poster-img')
       .should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg')
   });  
