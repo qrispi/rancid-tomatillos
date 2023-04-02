@@ -23,7 +23,7 @@ export default class App extends Component {
     })
   }
   mapPosters = (movies) => {
-    return movies.map(movie => 
+    return movies.sort((a, b) => a.average_rating - b.average_rating).map(movie => 
       <Poster key={movie.id} data={movie} clearSearch={this.clearFilteredMovies}/>);
   }
   searchMovies = (input) => {
