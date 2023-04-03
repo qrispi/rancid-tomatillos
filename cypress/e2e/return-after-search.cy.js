@@ -3,8 +3,6 @@ describe("As a user, when I return the main page after viewing a searched movie,
       cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies', { fixture: 'movies.json' });
       cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270', { fixture: 'single-movie-436270.json' });
       cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/436270/videos', { fixture: 'single-movie-videos-436270.json' });
-      cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/505642', { fixture: 'single-movie-505642.json' });
-      cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/505642/videos', { fixture: 'single-movie-videos-505642.json' });
       
       cy.visit('http://localhost:3000');
     });
@@ -14,8 +12,6 @@ describe("As a user, when I return the main page after viewing a searched movie,
           .type('Black Adam');
         cy.get('.poster-img').first().click();
         cy.contains('Go Back').click();
-        cy.get('.search-bar')
-          .type('')
         cy.get('.poster-container')
           .get('.poster-img').should('have.length', 4);
     });
