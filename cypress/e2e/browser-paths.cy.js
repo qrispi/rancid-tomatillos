@@ -7,7 +7,7 @@ describe("When a user clicks on a movie and the details page is rendered, the UR
       cy.visit('http://localhost:3000');
     });
 
-    it('should have a unique URL path when clicking on  movie and be able to go back and forward', () => {
+    it('should have a unique URL path when clicking on a movie and be able to go back and forward', () => {
         cy.get('.poster-img').first().click();
         cy.url('http://localhost:3000/movie/436270');
         cy.go('back')

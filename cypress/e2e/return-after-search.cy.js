@@ -12,6 +12,7 @@ describe("As a user, when I return the main page after viewing a searched movie,
           .type('Black Adam');
         cy.get('.poster-img').first().click();
         cy.contains('Go Back').click();
+        // Right here it breaks and only sees one poster in the poster container...
         cy.get('.poster-container')
           .get('.poster-img').should('have.length', 4);
     });
