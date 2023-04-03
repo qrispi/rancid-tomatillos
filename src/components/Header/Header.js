@@ -28,3 +28,7 @@ const Header = ({search}) => {
 }
 
 export default Header;
+
+Header.propTypes = {
+  search: PropTypes.func.isRequired
+}
