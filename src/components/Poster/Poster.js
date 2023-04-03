@@ -3,9 +3,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
-const Poster = ({data, clearSearch}) => {
+const Poster = ({data}) => {
     return (
-        <NavLink className='nav' key={data.id} to={`/movie/${data.id}`} onClick={clearSearch}>
+        <NavLink className='nav' key={data.id} to={`/movie/${data.id}`}>
                 <img className='poster-img' src={data.poster_path} loading="lazy" alt={`Movie Poster of ${data.title}`}/>
         </NavLink>
     )
@@ -19,7 +19,6 @@ Poster.propTypes = {
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired
     }),
-    clearSearch: PropTypes.func.isRequired
 }
 
 Poster.defaultProps = {
