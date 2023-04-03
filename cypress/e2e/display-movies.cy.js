@@ -6,7 +6,7 @@ describe('movies should be displayed upon visiting the website', () => {
 
   it('should display 4 movie posters', () => {
       cy.get('.poster-container')
-        .get('.poster').should('have.length', 4)
+        .get('.poster-img').should('have.length', 4)
         .first().get('.poster-img')
         .should('have.attr', 'src', 'https://image.tmdb.org/t/p/original//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg')
   });

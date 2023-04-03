@@ -4,7 +4,7 @@ import "./Header.css";
 import Search from "../Search/Search";
 import { Route, NavLink } from 'react-router-dom';
 
-const Header = ({search}) => {
+const Header = ({search, clear}) => {
     return (
         <header>
           <div className='logo-wrapper'>
@@ -14,7 +14,7 @@ const Header = ({search}) => {
             </div>
             <Route path='/:movieId'>
                 <NavLink to='/' className='back-navlink'>
-                    <button className="back-button">Go Back</button>
+                    <button onClick={clear} className="back-button">Go Back</button>
                 </NavLink>
                 <p className='tagline move-down' >find your next worst movie...</p>
             </Route>
@@ -30,5 +30,6 @@ const Header = ({search}) => {
 export default Header;
 
 Header.propTypes = {
-  search: PropTypes.func.isRequired
+  search: PropTypes.func.isRequired,
+  clear: PropTypes.func.isRequired
 }

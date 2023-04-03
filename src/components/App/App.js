@@ -24,7 +24,7 @@ export default class App extends Component {
   }
   mapPosters = (movies) => {
     return movies.sort((a, b) => a.average_rating - b.average_rating).map(movie => 
-      <Poster key={movie.id} data={movie} clearSearch={this.clearFilteredMovies}/>);
+      <Poster key={movie.id} data={movie}/>);
   }
   searchMovies = (input) => {
     const filtered = this.state.movies.filter(movie => movie.title.toLowerCase().includes(input.input.toLowerCase()));
@@ -41,7 +41,7 @@ export default class App extends Component {
     const allMovies = this.mapPosters(this.state.movies);
     return (
       <main className="app">
-        <Header search={this.searchMovies}/>
+        <Header search={this.searchMovies} clear={this.clearFilteredMovies}/>
         <Switch>
           <Route exact path="/">
             <div className='poster-container'>

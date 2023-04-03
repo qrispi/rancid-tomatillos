@@ -19,7 +19,8 @@ class Search extends Component {
     render() {
         return (
             <form>
-                <input type='search' className="search-bar" placeholder="Search for a movie..." onChange={(event) => this.updateState(event)} value={this.state.input}/>
+                <label for="searchBar" className="off-page">Search Movies</label>
+                <input type='search' className="search-bar" placeholder="Search for a movie..." onChange={(event) => this.updateState(event)} value={this.state.input} id="searchBar" />
             </form>
         )
     }
