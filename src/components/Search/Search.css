@@ -9,3 +9,12 @@
   border-radius: 3px;
   font-weight: 600;
 }
+
+.off-page {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

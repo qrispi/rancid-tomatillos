@@ -11,7 +11,7 @@ describe('user should be able to see details for a specific movie', () => {
 
   it('should be able to click a movie and see that specific movie\'s details', () => {
   
-    cy.get('.poster-img').last().click()
+    cy.get('.poster-img').eq(2).click()
     cy.get('.hero')
     cy.contains('Black Panther: Wakanda Forever')
     cy.contains('Forever.')
