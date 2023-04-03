@@ -2,8 +2,10 @@
     display: flex;
     margin-left: 25px;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1000px;
     width: 87%;
+    align-items: center;
+    justify-content: center;
 }
 
 .stats {

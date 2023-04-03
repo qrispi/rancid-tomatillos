@@ -18,9 +18,15 @@ class Search extends Component {
     }
     render() {
         return (
-            <input type='search' className="search-bar" placeholder="Search for a movie..." onChange={(event) => this.updateState(event)} value={this.state.input}/>
+            <form>
+                <input type='search' className="search-bar" placeholder="Search for a movie..." onChange={(event) => this.updateState(event)} value={this.state.input}/>
+            </form>
         )
     }
 }
 
-export default Search
+export default Search;
+
+Search.propTypes = {
+    search: PropTypes.func.isRequired
+}

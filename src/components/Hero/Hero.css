@@ -21,7 +21,8 @@
 .movie-tagline {
     align-self: flex-end;
     border-left: rgb(3, 78, 3) solid 7px;
-    margin-top: 10vh;
+    justify-self: flex-end;
+    margin-top: auto;
     margin-right: 3vw;
     background-color: rgba(3, 78, 3, 0.6);
 }

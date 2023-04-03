@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     width: 85.6%;
+    max-width: 1000px;
 }
 
 .multiple-videos {
@@ -17,8 +18,8 @@
     height: 27vw;
     border-radius: 3px;
     border: none;
-    max-width: 800px;
-    max-height: 450px;
+    max-width: 700px;
+    max-height: 400px;
     filter: drop-shadow(3px 3px 5px #888888);
 }
 
@@ -27,5 +28,7 @@
     height: 12vw;
     border-radius: 3px;
     border: none;
+    max-width: 280px;
+    max-height: 230px;
     filter: drop-shadow(3px 3px 5px #888888);
 }
